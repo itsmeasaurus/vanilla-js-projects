@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://anjana.dev/vanilla-js-projects/clock/index.html -->
+<html data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/svg+xml" href="https://anjana.dev/vanilla-js-projects/favicon.svg">
+
+	<title>Random Clock | Vanilla JS Projects</title>
+	<style>
+		#clock {
+			width: 100%;
+			height: 50vh;
+			position: relative;
+		}
+
+		#clock p {
+			width: 200px;
+			position: relative;
+			font-size: xx-large;
+		}
+	</style>
+
+  <link rel="stylesheet" crossorigin="" href="./Random Clock _ Vanilla JS Projects_files/pico.css">
+  <link rel="stylesheet" crossorigin="" href="./Random Clock _ Vanilla JS Projects_files/spacing.css">
+</head>
+
+<body class="container" data-new-gr-c-s-check-loaded="14.1209.0" data-gr-ext-installed="" style="">
+	<header>
+		<h1>random clock</h1>
+	</header>
+
+	<main class="container">
+		<article>
+			<div id="clock">
+				<p id="time"></p>
+
+			</div>
+		</article>
+	</main>
+
+	<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $time = document.querySelector('#time');
+            const getTime = () => new Date().toLocaleTimeString();
+            $time.textContent = getTime();
+
+            let lastTime = 0;
+            function updateClock(currentTime) {
+                if (currentTime - lastTime >= 3000) {
+                    lastTime = currentTime;
+                    $time.textContent = getTime();
+                    $time.style.color = randomColor();
+                    $time.style.top = random();
+                    $time.style.left = random();
+                }
+                requestAnimationFrame(updateClock);
+            }
+
+            function randomColor() {
+                const [s, l] = ['75%', '75%'];
+				const h = Math.floor(Math.random() * 360);
+				return `hsl(${h} ${s} ${l})`;
+            }
+
+            function random() {
+                return Math.floor(Math.random() * 100) + '%';
+            }
+
+            requestAnimationFrame(updateClock);
+        });
+    </script>
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

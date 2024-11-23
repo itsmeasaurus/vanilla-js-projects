@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://anjana.dev/vanilla-js-projects/dark-mode/index.html -->
+<html data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/svg+xml" href="https://anjana.dev/vanilla-js-projects/favicon.svg">
+
+	<title>Dark Mode | Vanilla JS Projects</title>
+
+  <link rel="stylesheet" crossorigin="" href="./Dark Mode _ Vanilla JS Projects_files/pico.css">
+  <link rel="stylesheet" crossorigin="" href="./Dark Mode _ Vanilla JS Projects_files/darklight.css">
+</head>
+
+<body class="container grid" data-new-gr-c-s-check-loaded="14.1207.0" data-gr-ext-installed="" style="">
+	<header>
+		<h1>dark mode</h1>
+	</header>
+
+	<nav style="align-self:center;">
+
+		<label>
+			<input type="checkbox" id="toggle" name="toggle" role="switch" checked="">
+			Use dark mode
+		</label>
+
+	</nav>
+
+	<main>
+		<article>
+
+			<main id="darklight"></main>
+
+		</article>
+	</main>
+
+	<footer>
+
+
+	</footer>
+	<script id="theme.js">
+    
+
+    const toggle = document.getElementById('toggle');
+    toggle.addEventListener('change', function() {
+        const htmlElement = document.documentElement;
+        const currentTheme = htmlElement.dataset.theme;
+        htmlElement.dataset.theme = currentTheme === 'dark' ? 'light' : 'dark';
+    });
+	</script>
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
